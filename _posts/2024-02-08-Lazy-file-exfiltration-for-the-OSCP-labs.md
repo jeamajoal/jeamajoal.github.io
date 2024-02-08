@@ -57,7 +57,8 @@ function UploadToWebServer($filepath, $url) {
 
         Invoke-RestMethod $url -Method POST -ContentType "multipart/form-data; boundary=`"$boundary`"" -Body $bodyLines
     }
-	
+'''
+
 <b>Python server side for handling the data:</b>
 
 '''python
