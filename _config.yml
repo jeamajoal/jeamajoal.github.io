@@ -57,7 +57,7 @@ plugins:
 author:
   name   : "jeamaJoal"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Multi decade IT Engineer pivotting focus to security and red teaming"
+  bio    : "Multi-decade IT engineer pivoting focus to security and red teaming, leveraging a rich history of innovation for the challenges ahead."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
