@@ -9,7 +9,8 @@ tags:
   - powershell
   - OSCP
 ---
-<b>Lazy is good when the result is that lazy becomes affordable.</b>
+<b><H1>Lazy is good when the result is that lazy becomes affordable.</H!></b>
+Skip to the code. <a target="_new" href=https://github.com/jeamajoal/lazy_pwshpy_exfiltrator>Jeamajoal's Lazy PwshPy Exfiltrator</a>
 
 <b>Background:</b>
 While diving into OSCP labs, I found myself searching through disk contents for clues. Although I'm adept at using the command line, sometimes the ease of navigating folders visually is preferable. Missing crucial details in a lab, likely from being tired, made me decide to find a better solution to avoid such misses.
@@ -18,13 +19,13 @@ While diving into OSCP labs, I found myself searching through disk contents for 
 My plan was to automate a simple yet effective process. The goal was to filter and exfiltrate files to a web server where I could easily sift through them. Simplicity was the cornerstone.
 
 <b>Solution:</b>
-I opted for a Powershell script utilizing Get-ChildItem with a -Filter parameter, coupled with the System.Net.Webclient class for exfiltration. I discovered a Python3 web server by another creator that fit my initial needs and decided to build upon it. Credit to the original creator: Lightweight HTTP Upload Server.
+I opted for a Powershell script utilizing Get-ChildItem with a -Filter parameter, coupled with the System.Net.Webclient class for exfiltration. I discovered a Python3 web server by another creator that fit my initial needs and decided to build upon it. Credit to the original creator: <a target="_new" href=https://edepree.com/2014/10/18/lightweight-http-upload-server.html>Lightweight HTTP Upload Server</a>.
 
 <b>Challenge:</b>
 I needed more than just dumping files into a single folder; I wanted them organized. This meant enhancing the server to handle additional data from my script for better file management.
 
 <b>Check It Out:</b>
-See the current version on GitHub: Jeamajoal's Lazy PwshPy Exfiltrator. The Powershell script's core functionality is in the upload function, where it sends file data along with the file path, so the server knows where to place the files.
+See the current version on GitHub: <a target="_new" href=https://github.com/jeamajoal/lazy_pwshpy_exfiltrator>Jeamajoal's Lazy PwshPy Exfiltrator</a>. The Powershell script's core functionality is in the upload function, where it sends file data along with the file path, so the server knows where to place the files.
 
 <b>Powershell snippet for uploading files:</b>
 
