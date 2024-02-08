@@ -10,7 +10,7 @@ tags:
   - OSCP
 ---
 <b>Lazy is good when the result is that lazy becomes affordable.</b><br>
-Skip to the code. <br><a target="_new" href=https://github.com/jeamajoal/lazy_pwshpy_exfiltrator>Jeamajoal's Lazy PwshPy Exfiltrator</a>
+<br><a target="_new" href=https://github.com/jeamajoal/lazy_pwshpy_exfiltrator>Skip to the code.</a>
 
 <b>Background:</b><br>
 While diving into OSCP labs, I found myself searching through disk contents for clues. Although I'm adept at using the command line, sometimes the ease of navigating folders visually is preferable. Missing crucial details in a lab, likely from being tired, made me decide to find a better solution to avoid such misses.
