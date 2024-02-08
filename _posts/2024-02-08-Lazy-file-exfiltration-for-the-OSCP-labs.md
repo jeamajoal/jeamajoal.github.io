@@ -172,7 +172,7 @@ def deal_post_data(self):
 <b>The Fun Part:</b>
 
 Start your postserver.py
-We set the ip, port, and relative upload directory. (I server files from the curent directory and upload to a sub-directory)
+We set the ip, port, and relative upload directory. (I serve files from the curent directory and upload to a sub-directory)
 
 ```shell
 python3 python/postserver.py -b 0.0.0.0 -p 8443 -u uploads
