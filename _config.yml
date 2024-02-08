@@ -5,7 +5,7 @@
 # yourself editing this file very often, consider using Jekyll's data files
 # feature for the data you need to update frequently.
 #
-# For technical reasons, this file is *NOT* reloaded automatically when you use
+# For technicareasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
@@ -13,14 +13,16 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
-email:
+title: jeamaJoal vs. Automation 
+email: jeamajoal@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
-github_username: username
+Begenning the day I found the NIBBLES.BAS file on my dad's computer as a 6th grader
+and realized i could change the game by modifying the text, I was hooked. Now, being in
+IT since the early 2000s, I have automated a lot of things. Some for fun, alot for work,
+and now some for security.  Join me as i share some of my work as I use my experiences 
+to fuel content for this blog.  
+#twitter_username: username
+github_username: jeamajoal
 minimal_mistakes_skin: default
 search: true
 
@@ -58,9 +60,9 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
+  name   : "jeamaJoal"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "Finding time to not find time"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -77,15 +79,15 @@ author:
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+  #  - label: "Twitter"
+   #   icon: "fab fa-fw fa-twitter-square"
+    #  url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+ #   - label: "Instagram"
+  #    icon: "fab fa-fw fa-instagram"
+   #   url: "https://instagram.com/"
 
 defaults:
   # _posts
