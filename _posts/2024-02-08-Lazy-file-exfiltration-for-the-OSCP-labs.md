@@ -9,7 +9,7 @@ tags:
   - powershell
   - OSCP
 ---
-<b>Lazy is good when the result is that lazy becomes affordable.</b><br>
+<b>Lazy is good when the result is that lazy becomes affordable.</b>
 <br><a target="_new" href=https://github.com/jeamajoal/lazy_pwshpy_exfiltrator>Skip to the code.</a>
 
 <b>Background:</b><br>
