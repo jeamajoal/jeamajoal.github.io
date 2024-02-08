@@ -1,4 +1,3 @@
-  GNU nano 7.2                                                                                                                    2024-02-08-Lazy-file-exfiltration-for-the-OSCP-labs.md *                                                                                                                           
 ---
 title: "Lazy file exfiltration for OSCP labs with powershell python and crackmapexec"
 date: 2024-02-08T15:34:30-06:00
