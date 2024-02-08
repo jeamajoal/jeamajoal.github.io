@@ -169,5 +169,4 @@ def deal_post_data(self):
             return ('Failed',self.client_address,fn )
 ```
 
-Check out the github repo where i will add some use caes and screenshots so you can feel like you were there.
 
