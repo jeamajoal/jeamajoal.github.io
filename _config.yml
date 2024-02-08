@@ -18,7 +18,7 @@ email: jeamajoal@gmail.com
 description: "Begenning the day I found the NIBBLES.BAS file on my dad's computer as a 6th grader and realized i could change the game by modifying the text, I was hooked. Now, being in IT since the early 2000s, I have automated a lot of things. Some for fun, alot for work, and now some for security.  Join me as i share some of my work as I use my experiences to fuel content for this blog."
 #twitter_username: username
 github_username: jeamajoal
-minimal_mistakes_skin: default
+minimal_mistakes_skin: dark
 search: true
 
 # Build settings
