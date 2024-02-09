@@ -112,5 +112,3 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-
-remote_theme: pages-themes/primer@v0.2.0
