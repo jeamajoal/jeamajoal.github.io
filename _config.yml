@@ -54,6 +54,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-remote-theme
 
 author:
   name   : "jeamaJoal"
@@ -112,5 +113,4 @@ tag_archive:
   type: liquid
   path: /tags/
 
-layouts_dir: _layouts
-source: src
+remote_theme: pages-themes/primer@v0.2.0
