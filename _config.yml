@@ -60,9 +60,9 @@ author:
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "Multi-decade IT engineer pivoting focus to security and red teaming, leveraging a rich history of innovation for the challenges ahead."
   links:
-    - label: "Website"
+    - label: "GitBook"
       icon: "fas fa-fw fa-link"
-      url: "https://"
+      url: "https://jvsautomate.gitbook.io"
     - label: "X (formerly Twitter)"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/jeamajoal/"
