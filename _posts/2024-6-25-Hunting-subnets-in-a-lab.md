@@ -11,7 +11,6 @@ tags:
 ---
 
 ## Introduction
-
 During a recent lab session, I encountered a challenging but exciting task: hunting down subnets. Armed with Domain Admin (DA) privileges on the main domain, I was set to make the exercise an intriguing venture. Despite the inherent lack of operational security (OpSec) safety in my approach, the process was thoroughly engaging.
 
 ### **Toolset**
