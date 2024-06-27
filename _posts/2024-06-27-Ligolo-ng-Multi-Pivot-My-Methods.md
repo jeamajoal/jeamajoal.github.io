@@ -38,7 +38,7 @@ sudo ip tuntap add user kali mode tun ligolo3
 sudo ip link set ligolo3 up
 ```
 
-![](/_posts/res/ligolopivoting/Pasted image 20240627051159.png?raw=true)
+![A](/_posts/res/ligolopivoting/Pasted image 20240627051159.png?raw=true)
 *Three ligolo TUN interfaces, my existing VPN connection, and my virtual ethernet.*
 
 ### My Terminals
