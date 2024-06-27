@@ -16,7 +16,7 @@ During a recent lab session, I encountered a challenging but exciting task: hunt
 
 - **PowerShell Scripting**: Utilized for probing subnet addresses.
 - **socat**: Employed to listen for incoming UDP traffic.
-- **NXC Command**: Used to execute commands across the network.
+- **Net-Exec**: Used to execute commands across the network.
 - **Web Server**: Used stage our powershell.
 
 ### **PowerShell Script**
