@@ -24,6 +24,7 @@ Let's dive into the scenario and the steps to achieve this unique pivoting metho
 
 ## Preparation
 I am going to get some preparation out of the way now in order to keep this as organized as possible, for you and for me.  TUN interfaces are used to route traffic between the ligolo server and agents.  These don't exist so we must create them.  
+
 ### Create TUN Interfaces
 The below commands will create three TUN interfaces for my user, `kali`.`
 ```bash
