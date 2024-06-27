@@ -38,12 +38,12 @@ sudo ip tuntap add user kali mode tun ligolo3
 sudo ip link set ligolo3 up
 ```
 
-![A](/_posts/res/ligolopivoting/Pasted image 20240627051159.png?raw=true)
+![](/_posts/res/ligolopivoting/Pasted image 20240627051159.png?raw=true)
 *Three ligolo TUN interfaces, my existing VPN connection, and my virtual ethernet.*
 
 ### My Terminals
 Maybe not what you have come here for exactly but this post is about how I implement ligolo and  staying organized is a big part of it for me. That said, i use `Terminator` for my terminals.  It has some features that i use alot, but that may be another blog one day.  For today we will just focus on how it helps with ligolo.  When doing labs and CTF work i have many tabs open at once, and try to utilize them only for they are mean to be used for.  My ligolo tab houses any terminal window used to manage TUN interfaces.  Mainly, ligolo proxy and a terminal per ligolo agent.  Makes it super easy to bring them all back up if something fails.  Let's start ligolo and see what our space looks like.
-![[Pasted image 20240627052707.png]]
+![](/_posts/res/ligolopivoting/Pasted image 20240627052707.png?raw=true)
 *Ligolo started from our `loadables` (This is the web server root) directory*
 
 ## Initiate first pivot
