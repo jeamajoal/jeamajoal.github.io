@@ -95,11 +95,11 @@ defaults:
       classes: wide
       author_profile: true
       read_time: true
-      repository: jeamajoal/jeamajoal.github.io
       html:
         comments:
           provider: "utterances"
           utterances:
+            repo: jeamajoal/jeamajoal.github.io
             theme: "github-dark" # "github-dark"
             issue_term: "pathname"
             label: "comment"
