@@ -103,7 +103,13 @@ defaults:
     values:
       layout: single
       author_profile: true
-
+      
+comments:
+  provider: "utterances"
+  utterances:
+    theme: "github-dark" # "github-dark"
+    issue_term: "pathname"
+    
 category_archive:
   type: liquid
   path: /categories/
