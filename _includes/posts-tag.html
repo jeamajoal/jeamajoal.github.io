@@ -1,12 +1,5 @@
 {%- for post in site.tags[include.taxonomy] -%}
   {%- unless post.hidden -%}
-    <script src="https://utteranc.es/client.js"
-          repo="jeamaJoal/jeamajoal.github.io"
-          issue-term="pathname"
-          theme="github-dark"
-          crossorigin="anonymous"
-          async>
-    </script>
     {% include archive-single.html %}
   {%- endunless -%}
 {%- endfor -%}
