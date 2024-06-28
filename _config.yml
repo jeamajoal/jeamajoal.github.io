@@ -45,7 +45,16 @@ include:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
+html:
+  comments:
+    provider: "utterances"
+    utterances:
+      repo: jeamajoal/jeamajoal.github.io
+      theme: "github-dark" # "github-dark"
+      issue_term: "pathname"
+      label: "comment"
+      share: true
+      related: true
 # Plugins (previously gems:)
 plugins:
   - jekyll-paginate
@@ -95,16 +104,6 @@ defaults:
       classes: wide
       author_profile: true
       read_time: true
-      html:
-        comments:
-          provider: "utterances"
-          utterances:
-            repo: jeamajoal/jeamajoal.github.io
-            theme: "github-dark" # "github-dark"
-            issue_term: "pathname"
-            label: "comment"
-            share: true
-            related: true
   # _pages
   - scope:
       path: "_pages"
