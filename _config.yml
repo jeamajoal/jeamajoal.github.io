@@ -105,6 +105,7 @@ defaults:
       author_profile: true
       
 comments:
+  repository: "jeamaJoal/jeamajoal.github.io"
   provider: "utterances"
   utterances:
     theme: "github-dark" # "github-dark"
