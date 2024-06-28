@@ -95,6 +95,7 @@ defaults:
       classes: wide
       author_profile: true
       read_time: true
+      repository: jeamajoal/jeamajoal.github.io
       comments:
         provider: "utterances"
         utterances:
