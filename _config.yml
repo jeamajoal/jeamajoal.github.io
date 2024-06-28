@@ -95,9 +95,14 @@ defaults:
       classes: wide
       author_profile: true
       read_time: true
-      comments: true
-      share: true
-      related: true
+      comments:
+        provider: "utterances"
+        utterances:
+          theme: "github-light" # "github-dark"
+          issue_term: "pathname"
+          label: "comment"
+          share: true
+          related: true
   # _pages
   - scope:
       path: "_pages"
