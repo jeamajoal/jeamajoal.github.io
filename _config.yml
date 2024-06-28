@@ -96,14 +96,15 @@ defaults:
       author_profile: true
       read_time: true
       repository: jeamajoal/jeamajoal.github.io
-      comments:
-        provider: "utterances"
-        utterances:
-          theme: "github-dark" # "github-dark"
-          issue_term: "pathname"
-          label: "comment"
-          share: true
-          related: true
+      html:
+        comments:
+          provider: "utterances"
+          utterances:
+            theme: "github-dark" # "github-dark"
+            issue_term: "pathname"
+            label: "comment"
+            share: true
+            related: true
   # _pages
   - scope:
       path: "_pages"
